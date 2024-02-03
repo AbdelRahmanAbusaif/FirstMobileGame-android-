@@ -37,17 +37,17 @@ public class Movement : MonoBehaviour
     bool allowInput = true;
     bool isDragging = false;
 
-    public float PowerPr 
-    { 
-        get 
+    public float PowerPr
+    {
+        get
         {
             return power;
-        } 
-        set 
+        }
+        set
         {
-            if(value > 0 )
+            if (value > 0)
             {
-                power=value;
+                power = value;
             }
             else
             {
@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                value = 100000f ;
+                value = 100000f;
             }
         }
     }
@@ -80,8 +80,8 @@ public class Movement : MonoBehaviour
         tl = GetComponent<TragectoryLine>();
         //PlayerFollow =FindAnyObjectByType<PlayerFollowSpike>().GetComponent<PlayerFollowSpike
         retSlowMotion();
-        countAttack=CountAttackPr; 
-        power=PowerPr;
+        countAttack = CountAttackPr;
+        power = PowerPr;
         am = FindAnyObjectByType<AudioManager>();
         Debug.Log($"Audio Manager {am.IsUnityNull()}");
     }
@@ -121,11 +121,11 @@ public class Movement : MonoBehaviour
                     break;
             }
         }
-        
+
     }
     private void OnMouseDown()
     {
-        if (!allowInput || countAttack<=0)
+        if (!allowInput || countAttack <= 0)
             return;
         rb.velocity = new Vector3(rb.velocity.x * 0.2f, rb.velocity.y * 0.2f);
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -162,7 +162,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            
+
             // Invoke the event passing the cloned GameObject
             MyEvent?.Invoke(PlayerInstiate);
             PlayerInstiate = Instantiate(Player, new Vector3(transform.position.x - 0.5f, transform.position.y + 0.6f, 0), Quaternion.identity);
@@ -174,7 +174,7 @@ public class Movement : MonoBehaviour
             //Destroy Partical System
             StartCoroutine(DestroyPartical(pr));
 
-            Transform[]Body = new Transform[PlayerInstiate.transform.childCount];
+            Transform[] Body = new Transform[PlayerInstiate.transform.childCount];
             for (global::System.Int32 i = 0; i < PlayerInstiate.transform.childCount; i++)
             {
                 Body[i] = PlayerInstiate.transform.GetChild(i);
@@ -268,7 +268,7 @@ public class Movement : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if (!allowInput || countAttack <=0)
+        if (!allowInput || countAttack <= 0)
             return;
         endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         endPoint.z = 15;

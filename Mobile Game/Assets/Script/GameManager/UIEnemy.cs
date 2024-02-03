@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class UIEnemy : MonoBehaviour
 {
-    private int index = 0;
+    private int index;
     private ForUIEnemy UI;
 
     public GameObject[] EnemyHead;
@@ -15,7 +13,6 @@ public class UIEnemy : MonoBehaviour
     }
     public void DisActive(GameObject Enemy)
     {
-        
         try
         {
             UI = Enemy.GetComponent<ForUIEnemy>();
@@ -29,7 +26,7 @@ public class UIEnemy : MonoBehaviour
                 Debug.Log("DisActive not executed. Check array bounds or UI state.");
             }
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.Log("Exception in DisActive: " + e);
         }

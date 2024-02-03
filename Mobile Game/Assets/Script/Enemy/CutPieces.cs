@@ -50,7 +50,6 @@ public class CutPieces : MonoBehaviour
         for (int i = 0; i < Enemy.transform.childCount; i++)
         {
             HingeJoint2D hinge = Enemy.transform.GetChild(i).GetComponent<HingeJoint2D>();
-            //SpriteRenderer sp = Enemy.transform.GetChild(i).GetComponent<SpriteRenderer>();
             Rigidbody2D rb = Enemy.transform.GetChild(i).GetComponent<Rigidbody2D>();
             Collider2D cl = Enemy.transform.GetChild(i).GetComponent<Collider2D>();
 

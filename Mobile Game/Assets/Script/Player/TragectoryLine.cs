@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TragectoryLine : MonoBehaviour
 {
     public LineRenderer ln;
     Vector3 throwbale;
-    float BallPowerThrow = 450f;
+    float ballPowerThrow = 450f;
     private void Awake()
     {
         ln=GetComponent<LineRenderer>();   
@@ -25,7 +23,7 @@ public class TragectoryLine : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 distance = mousePos - (Vector3)transform.position;
         // Normalize the distance to get the direction and multiply by the throw power
-        throwbale = -distance.normalized * BallPowerThrow;
+        throwbale = -distance.normalized * ballPowerThrow;
     }
     public void RenderLine()
     {
