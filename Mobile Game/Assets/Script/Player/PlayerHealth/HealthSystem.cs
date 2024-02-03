@@ -50,12 +50,16 @@ public class HealthSystem : MonoBehaviour
         if (movement != null)
         {
             print("Die ");
+
             // Disable Movement script
             movement.StopMovement();
+            
             // Reset velocity to zero
             movement.rb.velocity = new Vector3(0, 0, 0);
+            
             //show UI Game  over menu 
             GameOverMenu.GameOverActive();
+            
             //play sound die
             am.PlayClip(am.DieEffects);
         }

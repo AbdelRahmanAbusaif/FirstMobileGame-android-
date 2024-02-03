@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ballController : MonoBehaviour
+public class BallController : MonoBehaviour
 {
     // Variables
     Vector3 throwbale;  // The vector representing the direction and strength of the throw

@@ -12,7 +12,7 @@ public class ArrowTrap : MonoBehaviour
     private void Start()
     {
         // Start shooting arrows immediately and then continue at regular intervals
-        InvokeRepeating("ShootArrow", 1f, shootInterval);
+        InvokeRepeating(nameof(ShootArrow), 1f, shootInterval);
     }
 
     void ShootArrow()

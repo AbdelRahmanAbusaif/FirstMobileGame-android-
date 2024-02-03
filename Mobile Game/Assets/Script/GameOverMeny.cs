@@ -19,13 +19,14 @@ public class GameOverMeny : MonoBehaviour
     }
     public void Quit()
     {
-        Application.Quit();
         print("Quitting");
+        Application.Quit();
     }
     public IEnumerator WaitAnimation()
     {
         anim.SetTrigger("End");
         yield return new WaitForSeconds(1);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         anim.SetTrigger("Start");
     }
